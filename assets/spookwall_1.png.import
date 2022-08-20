@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spookwall_1.png-48982952bbc1f8bc8adfbf8d9ca1a2f9.stex"
+path="res://.import/spookwall_1.png-094edfbc4498f700bbc9f2b340330b9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spookwall_1.png"
-dest_files=[ "res://.import/spookwall_1.png-48982952bbc1f8bc8adfbf8d9ca1a2f9.stex" ]
+source_file="res://assets/spookwall_1.png"
+dest_files=[ "res://.import/spookwall_1.png-094edfbc4498f700bbc9f2b340330b9b.stex" ]
 
 [params]
 

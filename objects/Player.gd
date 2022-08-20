@@ -5,7 +5,9 @@ const SPEED = 80
 const ACCEL = 600
 const FRICTION = 400
 const GRAVITY = 300
-const JUMP_STRENGTH = 100
+const JUMP_STRENGTH = 100 #impulse speed
+const JUMP_ALLOWANCE = 15 # frames
+var air_count = 0
 var input_dir := Vector2(0,0)
 var velocity := Vector2(0,0)
 var blind := false
@@ -26,21 +28,34 @@ func _process(delta):
 	# calculate velocity based on input vector, ACCEL and FRICTION constants
 	if input_dir.x == 0:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+		$AnimationPlayer.play("idle")
 	else:
 		velocity.x = move_toward(velocity.x, SPEED * input_dir.x, ACCEL * delta)
+		$AnimationPlayer.play("run")
 	
-	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -JUMP_STRENGTH
-	
+	# gravity
 	velocity.y = move_toward(velocity.y, GRAVITY*10, GRAVITY * delta)
+	
+	# ground checks
+	if !is_on_floor():
+		air_count += 1
+	else: 
+		air_count = 0
+		
+		#jump mechanic
+	if Input.is_action_just_pressed("jump") and air_count <= JUMP_ALLOWANCE:
+		velocity.y = -JUMP_STRENGTH
+		# air_count += JUMP_ALLOWANCE
 	
 	# blind mechanic
 	if Input.is_action_pressed("blind"):
 		blind = true
+		$Blind.visible = true
 	else:
 		blind = false
+		$Blind.visible = false
 	
 	# move
 	velocity = move_and_slide(velocity, Vector2.UP)
+	print(air_count)
 	
