@@ -27,7 +27,7 @@ position = Vector2( -5.2464, -16.0715 )
 energy = 1.0
 
 [node name="Ghost" parent="." instance=ExtResource( 4 )]
-position = Vector2( 67, -7 )
+position = Vector2( 109, -51 )
 
 [node name="Stage" parent="." instance=ExtResource( 2 )]
 

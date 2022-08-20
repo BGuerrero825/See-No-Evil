@@ -78,6 +78,11 @@ blind={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="physics"
+2d_physics/layer_2="npc"
+
 [physics]
 
 common/enable_pause_aware_picking=true
