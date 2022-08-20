@@ -1,10 +1,11 @@
 extends KinematicBody2D
 # dist / sec
-const SPEED = 50
+const SPEED = 80
 # speed / sec
-const ACCEL = 200
+const ACCEL = 600
 const FRICTION = 400
-const GRAVITY = 100
+const GRAVITY = 300
+const JUMP_STRENGTH = 100
 var input_dir := Vector2(0,0)
 var velocity := Vector2(0,0)
 
@@ -20,15 +21,15 @@ func _process(delta):
 	input_dir.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	if input_dir.x == 1: $Sprite.flip_h = false
 	elif input_dir.x == -1: $Sprite.flip_h = true
-	# calculate speed based on input vector and ACCEL and FRICTION constants
+	# calculate velocity based on input vector, ACCEL and FRICTION constants
 	if input_dir.x == 0:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 	else:
 		velocity.x = move_toward(velocity.x, SPEED * input_dir.x, ACCEL * delta)
-	# jump
+	# jump stuff, currently works in air (no grounded check)
 	if Input.is_action_just_pressed("jump"):
-		velocity.y = -60
-	velocity.y = move_toward(velocity.y, GRAVITY, GRAVITY * delta)
-	print(velocity)
+		velocity.y = -JUMP_STRENGTH
+	velocity.y = move_toward(velocity.y, GRAVITY*10, GRAVITY * delta)
+	# move
 	velocity = move_and_slide(velocity)
 	
