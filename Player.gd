@@ -8,6 +8,7 @@ const GRAVITY = 300
 const JUMP_STRENGTH = 100
 var input_dir := Vector2(0,0)
 var velocity := Vector2(0,0)
+var blind := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
