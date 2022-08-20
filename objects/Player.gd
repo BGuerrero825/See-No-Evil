@@ -5,12 +5,14 @@ const SPEED = 80
 const ACCEL = 600
 const FRICTION = 400
 const GRAVITY = 300
-const JUMP_STRENGTH = 200  # impulse speed
+const JUMP_STRENGTH = 120  # impulse speed
 const JUMP_ALLOWANCE = 15  # frames
+const BLIND_COOLDOWN = 120 # frames
 var air_count = 0
 var input_dir := Vector2(0,0)
 var velocity := Vector2(0,0)
 var blind := false
+var blind_timer = 0
 
 onready var vision_extents : Vector2 = $vision_range/expand_contract.shape.extents
 
@@ -50,17 +52,20 @@ func _process(delta):
 		# air_count += JUMP_ALLOWANCE
 	
 	# blind mechanic
-	if Input.is_action_pressed("blind"):
+	if Input.is_action_pressed("blind") and (blind_timer == 0 or blind == true):
 		blind = true  # probably not needed anymore
-#		$Blind.visible = true
+		blind_timer = move_toward(blind_timer, BLIND_COOLDOWN, 15) 
+		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
 		$vision_range/expand_contract.shape.extents = Vector2(10, 10)
 		# can probably use animation player to change size of collision shape
 	else:
 		blind = false
-#		$Blind.visible = false
+		blind_timer = move_toward(blind_timer, 0, 1)
+		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
 #		$vision_range.scale(Vector2(1, 1))
 		$vision_range/expand_contract.shape.extents = vision_extents
 	
 	# move
 	velocity = move_and_slide(velocity, Vector2.UP)
+	print(blind_timer)
 	

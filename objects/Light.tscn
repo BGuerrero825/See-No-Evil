@@ -7,7 +7,7 @@
 position = Vector2( 90.1962, -28.629 )
 z_index = 1
 texture = ExtResource( 2 )
-energy = 2.0
+mode = 2
 shadow_enabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
