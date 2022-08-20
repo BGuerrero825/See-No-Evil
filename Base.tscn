@@ -8,12 +8,6 @@
 [node name="Node2D2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 12, -28 )
-
-[node name="Ghost" parent="." instance=ExtResource( 4 )]
-position = Vector2( 54, -55 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 43.3278, 7.60869 )
 
 [node name="Stage" parent="." instance=ExtResource( 2 )]
@@ -36,5 +30,8 @@ energy = 1.0
 [node name="Light4" parent="." instance=ExtResource( 3 )]
 position = Vector2( -5.2464, -16.0715 )
 energy = 1.0
+
+[node name="Ghost" parent="." instance=ExtResource( 4 )]
+position = Vector2( 67, -7 )
 
 [editable path="Stage"]
