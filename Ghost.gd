@@ -10,6 +10,9 @@ const ROTATION_SPEED = 0.3
 
 var velocity := Vector2(0,0)
 
+# reference to player, can pull position, blind var, etc
+onready var player : KinematicBody2D = $"/root/Global".player
+
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 #	pass # Replace with function body.
