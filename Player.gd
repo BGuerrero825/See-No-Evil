@@ -34,6 +34,13 @@ func _process(delta):
 		velocity.y = -JUMP_STRENGTH
 	
 	velocity.y = move_toward(velocity.y, GRAVITY*10, GRAVITY * delta)
+	
+	# blind mechanic
+	if Input.is_action_pressed("blind"):
+		blind = true
+	else:
+		blind = false
+	
 	# move
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
