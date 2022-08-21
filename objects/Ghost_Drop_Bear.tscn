@@ -4,7 +4,7 @@
 [ext_resource path="res://objects/Ghost_Drop_Bear.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 43 )
+extents = Vector2( 7, 34 )
 
 [node name="Ghost_Drop_Bear" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -18,5 +18,5 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CollisionShape2D" parent="player_detector" index="0"]
-position = Vector2( 0, 32 )
+position = Vector2( 0, 23 )
 shape = SubResource( 1 )

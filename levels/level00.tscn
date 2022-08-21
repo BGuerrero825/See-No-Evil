@@ -13,9 +13,10 @@ extents = Vector2( 31.5, 14.5 )
 [node name="level2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -42, 3 )
 
 [node name="Door" parent="." instance=ExtResource( 6 )]
-position = Vector2( -42, 5 )
+position = Vector2( 29, 5 )
 
 [node name="Key" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 5 )

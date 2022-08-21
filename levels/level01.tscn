@@ -52,8 +52,5 @@ position = Vector2( 114, 30 )
 position = Vector2( -29, -61 )
 texture = ExtResource( 8 )
 
-[node name="Light2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 31, -19 )
-
 [editable path="NpcOrchestrator"]
 [editable path="Stage"]
