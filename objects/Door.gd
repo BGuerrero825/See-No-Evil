@@ -1,7 +1,7 @@
 extends Sprite
 
 
-export var target_level_path := "res://levels/level_a.tscn"
+export var target_level_path := "res://levels/level00.tscn"
 
 onready var player : KinematicBody2D = $"/root/Global".player
 
