@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://objects/Ghost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/angy_ghost.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle_charge"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
 
 [node name="Ghost_Charger" instance=ExtResource( 1 )]
 SPEED = 15.0
@@ -8,4 +26,9 @@ CHARGE_SPEED = 130.0
 CHARGE_DELAY = 0.6
 
 [node name="Sprite" parent="." index="0"]
-modulate = Color( 0.556863, 0.145098, 0.113725, 1 )
+texture = ExtResource( 2 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" parent="." index="7"]
+anims/idle_charge = SubResource( 1 )

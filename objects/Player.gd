@@ -52,10 +52,11 @@ func _process(delta):
 			$Sounds.stop("walk_cycle")
 		else:
 			velocity.x = move_toward(velocity.x, SPEED * input_dir.x, ACCEL * delta)
-			$AnimationPlayer.play("run")
 			if(is_on_floor()):
+				$AnimationPlayer.play("run")
 				$Sounds.play("walk_cycle")
 			else:
+				$AnimationPlayer.play("jump")
 				$Sounds.stop("walk_cycle")
 		
 		# gravity
