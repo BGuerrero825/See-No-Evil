@@ -58,7 +58,7 @@ func _process(delta):
 
 func _on_player_detector_area_entered(area):
 	if not player.blind:
-#		print(area.name, " entered")
+		print(area.name, " entered player_detector")
 		state = State.WINDUP
 		charge_timer.start(CHARGE_DELAY)
 
