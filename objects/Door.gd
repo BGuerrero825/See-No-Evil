@@ -14,11 +14,13 @@ func _ready():
 
 func _on_Area2D_area_entered(area):
 	if area.name == "hit_box" and player.player_has_key:
+		$Sounds.play("door_unlock")
 		print("REACHED DOOR WITH KEY")
 		player.player_has_key = false
 		
 		level_transition_timer.start(level_transition_delay)
 	elif area.name == "hit_box" and not player.player_has_key:
+		$Sounds.play("door_locked")
 		print("DOOR LOCKED")
 
 

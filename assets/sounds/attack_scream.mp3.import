@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/attack_scream.mp3-ba228f890b020b8353b14787fbf7e95b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/attack_scream.mp3"
+dest_files=[ "res://.import/attack_scream.mp3-ba228f890b020b8353b14787fbf7e95b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
