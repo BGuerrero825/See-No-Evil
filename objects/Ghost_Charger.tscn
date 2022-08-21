@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/Ghost.tscn" type="PackedScene" id=1]
+
+[node name="Ghost_Charger" instance=ExtResource( 1 )]
+SPEED = 15.0
+CHARGE_SPEED = 130.0
+CHARGE_DELAY = 0.6
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 0.556863, 0.145098, 0.113725, 1 )

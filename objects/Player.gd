@@ -1,6 +1,6 @@
 extends KinematicBody2D
 # dist / sec
-const SPEED = 80
+const SPEED = 60
 # speed / sec
 const ACCEL = 600
 const FRICTION = 400
@@ -55,13 +55,13 @@ func _process(delta):
 	if Input.is_action_pressed("blind") and (blind_timer == 0 or blind == true):
 		blind = true  # probably not needed anymore
 		blind_timer = move_toward(blind_timer, BLIND_COOLDOWN, 15) 
-#		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
+		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
 		$vision_range/expand_contract.shape.extents = Vector2.ZERO
 	
 	else:
 		blind = false
 		blind_timer = move_toward(blind_timer, 0, 1)
-#		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
+		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
 		$vision_range/expand_contract.shape.extents = vision_extents
 	
 	# move

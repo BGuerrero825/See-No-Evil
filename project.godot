@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="See No Evil"
-run/main_scene="res://Base.tscn"
+run/main_scene="res://levels/level_a.tscn"
 config/icon="res://assets/icon.png"
 
 [autoload]

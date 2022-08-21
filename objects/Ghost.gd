@@ -2,12 +2,13 @@ extends KinematicBody2D
 
 
 # dist / sec
-const SPEED = 20
-const CHARGE_SPEED = 100
+export var SPEED : float = 45.0
+export var CHARGE_SPEED : float = 65.0
+export var CHARGE_DELAY : float = 2.0
 # speed / sec
-const ACCEL = 600
-const FRICTION = 400
-const ROTATION_SPEED = 0.3
+var ACCEL = 600
+var FRICTION = 400
+var ROTATION_SPEED = 0.3
 
 var velocity := Vector2(0,0)
 
@@ -19,7 +20,6 @@ var state : int = State.IDLE
 onready var player : KinematicBody2D = $"/root/Global".player
 
 onready var charge_timer := Timer.new()
-const CHARGE_DELAY : float = 1.5
 
 
 func _ready():

@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/circle_light.png" type="Texture" id=2]
 
 [node name="Light" type="Light2D"]
-position = Vector2( 90.1962, -28.629 )
 z_index = 1
 texture = ExtResource( 2 )
 mode = 2
