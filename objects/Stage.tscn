@@ -167,4 +167,4 @@ format = 1
 tile_data = PoolIntArray( 65537, 0, 1, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 131279, 0, 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="TileMap"]
-color = Color( 0.239216, 0.141176, 0.141176, 1 )
+color = Color( 0.192157, 0.0862745, 0.0862745, 1 )
