@@ -23,6 +23,7 @@ var original_pos = Vector2.ZERO
 
 func _ready():
 	original_pos = position
+	$AnimationPlayer.play("idle")
 
 
 func rotate_towards(target_pos, target_rotation_speed = ROTATION_SPEED) -> float:
