@@ -66,3 +66,7 @@ func _process(delta):
 	
 	# move
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+
+func _on_hit_box_area_entered(area):
+	print(area.name, " entered hitbox")
