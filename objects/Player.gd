@@ -78,7 +78,7 @@ func _process(delta):
 
 
 func _on_hit_box_area_entered(area):
-	print(area.name, " entered hitbox")
+#	print(area.name, " entered hitbox")
 	if area.name == "hurt_box":
 		print("player died")
 		player_is_dead = true

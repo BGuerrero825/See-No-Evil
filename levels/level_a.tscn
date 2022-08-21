@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/Light.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/NpcOrchestrator.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.5, 21 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 23.5, 20.5 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 22, 4 )
@@ -24,6 +30,20 @@ position = Vector2( 427, 5 )
 
 [node name="Position2D" type="Position2D" parent="NpcOrchestrator/Ghost_Chargers" index="0"]
 position = Vector2( 164, -37 )
+
+[node name="Area2D" type="Area2D" parent="NpcOrchestrator/Safe_Zones" index="0"]
+position = Vector2( -10, 80 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcOrchestrator/Safe_Zones/Area2D"]
+position = Vector2( 27.5, 11 )
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="NpcOrchestrator/Safe_Zones" index="1"]
+position = Vector2( -44, -37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcOrchestrator/Safe_Zones/Area2D2"]
+position = Vector2( 38.5, 11.5 )
+shape = SubResource( 2 )
 
 [node name="Stage" parent="." instance=ExtResource( 1 )]
 z_index = -5
