@@ -12,6 +12,8 @@ var drop_bear_positions = []
 
 var safe_zones = []
 
+var all_ghosts = []
+
 
 func _ready():
 	ghost_positions = $Ghosts.get_children()
@@ -32,17 +34,21 @@ func spawn_all_ghosts():
 		spawn_ghost(GHOST_CHARGER, x.global_position)
 	for x in drop_bear_positions:
 		spawn_ghost(GHOST_DROP_BEAR, x.global_position)
+	
+	print(all_ghosts)
 
 
 func delete_all_ghosts():
 	pass
 
 
-# TODO: Fix issue where ghosts aren't spawning into the scene
 func spawn_ghost(ghost_type, location):
 	var new_ghost = ghost_type.instance()
 	new_ghost.position = location
-	get_tree().get_current_scene().add_child(new_ghost)
-#	new_ghost.z_index = 100
+#	get_tree().get_current_scene().add_child(new_ghost)
+	get_tree().get_current_scene().call_deferred("add_child", new_ghost)
+
 	print("Spawned: ", new_ghost)
 	print("\t at location: ", new_ghost.position)
+	
+	all_ghosts.append(new_ghost)

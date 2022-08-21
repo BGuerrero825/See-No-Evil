@@ -88,4 +88,5 @@ func _on_hit_box_area_entered(area):
 
 func _on_game_over_timer_timeout():
 	print("GAME OVER")
-	get_tree().change_scene("res://levels/level_a.tscn")
+#	get_tree().change_scene("res://levels/level_a.tscn")
+	get_tree().call_deferred("change_scene", "res://levels/level_a.tscn")
