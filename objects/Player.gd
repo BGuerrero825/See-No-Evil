@@ -16,7 +16,8 @@ var blind_timer = 0
 
 var player_is_dead := false
 
-onready var vision_extents : Vector2 = $vision_range/expand_contract.shape.extents
+#onready var vision_extents : Vector2 = $vision_range/expand_contract.shape.extents
+var vision_extents := Vector2(75,48)
 onready var game_over_timer := Timer.new()
 var game_over_delay : float = 2.0
 
