@@ -1,6 +1,14 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://NpcOrchestrator.gd" type="Script" id=1]
+[ext_resource path="res://objects/NpcOrchestrator.gd" type="Script" id=1]
 
 [node name="NpcOrchestrator" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Ghosts" type="Node" parent="."]
+
+[node name="Ghost_Chargers" type="Node" parent="."]
+
+[node name="Ghost_Drop_Bears" type="Node" parent="."]
+
+[node name="Safe_Zones" type="Node" parent="."]
