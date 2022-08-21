@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://objects/Ghost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/Ghost_Drop_Bear.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.5, 37.5 )
+extents = Vector2( 7, 43 )
 
 [node name="Ghost_Drop_Bear" instance=ExtResource( 1 )]
-SPEED = 0.0
-CHARGE_SPEED = 250.0
-CHARGE_DELAY = 0.0
+script = ExtResource( 2 )
+CHARGE_SPEED = 350.0
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 0.0313726, 0.564706, 0.192157, 1 )
@@ -18,5 +18,5 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CollisionShape2D" parent="player_detector" index="0"]
-position = Vector2( 0.5, 37.5 )
+position = Vector2( 0, 32 )
 shape = SubResource( 1 )
