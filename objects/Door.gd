@@ -6,7 +6,7 @@ export var target_level_path := "res://levels/level00.tscn"
 onready var player : KinematicBody2D = $"/root/Global".player
 
 onready var level_transition_timer := Timer.new()
-var level_transition_delay : float = 0.6
+var level_transition_delay : float = 0.2
 
 func _ready():
 	level_transition_timer.connect("timeout", self, "_on_level_transition_timer_timeout")

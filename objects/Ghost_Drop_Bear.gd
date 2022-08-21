@@ -62,5 +62,6 @@ func _on_player_detector_area_entered(area):
 
 func _on_player_detector_area_exited(area):
 #	print(area.name, " exited")
-	state = State.FREEZE
-	position = original_pos
+	if area.name == "hit_box":
+		state = State.FREEZE
+		position = original_pos
