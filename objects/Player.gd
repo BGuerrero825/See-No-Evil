@@ -15,13 +15,14 @@ var blind := false
 var blind_timer = 0
 
 var player_is_dead := false
+var player_has_key := false
 
 #onready var vision_extents : Vector2 = $vision_range/expand_contract.shape.extents
 var vision_extents := Vector2(75,48)
 onready var game_over_timer := Timer.new()
 var game_over_delay : float = 2.0
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	$"/root/Global".register_player(self)
 	game_over_timer.connect("timeout", self, "_on_game_over_timer_timeout")
@@ -85,6 +86,11 @@ func _on_hit_box_area_entered(area):
 		$Blind.material.set_shader_param("blind", 1)
 		$Blind.modulate = Color.red
 		game_over_timer.start(game_over_delay)
+	if area.name == "key":
+		print("key picked up")
+		area.get_parent().free()
+		player_has_key = true
+		
 
 
 func _on_game_over_timer_timeout():
