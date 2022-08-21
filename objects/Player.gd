@@ -55,16 +55,14 @@ func _process(delta):
 	if Input.is_action_pressed("blind") and (blind_timer == 0 or blind == true):
 		blind = true  # probably not needed anymore
 		blind_timer = move_toward(blind_timer, BLIND_COOLDOWN, 15) 
-		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
-		$vision_range/expand_contract.shape.extents = Vector2(10, 10)
-		# can probably use animation player to change size of collision shape
+#		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
+		$vision_range/expand_contract.shape.extents = Vector2.ZERO
+	
 	else:
 		blind = false
 		blind_timer = move_toward(blind_timer, 0, 1)
-		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
-#		$vision_range.scale(Vector2(1, 1))
+#		$Blind.material.set_shader_param("blind", float(blind_timer/BLIND_COOLDOWN))
 		$vision_range/expand_contract.shape.extents = vision_extents
 	
 	# move
 	velocity = move_and_slide(velocity, Vector2.UP)
-	

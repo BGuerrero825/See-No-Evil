@@ -11,8 +11,8 @@ const ROTATION_SPEED = 0.3
 
 var velocity := Vector2(0,0)
 
-enum State {FOLLOW, WINDUP, CHARGE, FREEZE, IDLE}
-var state : int = State.FOLLOW
+enum State {WINDUP, CHARGE, FREEZE, IDLE}
+var state : int = State.IDLE
 
 # reference to player, can pull position, blind var, etc
 # player.position - player.blind
@@ -39,15 +39,10 @@ func _process(delta):
 	
 	match state:
 		
-		State.FOLLOW:  # outside of player screen, slowly move to player
-			$debug_text.text = "FOLLOW"
-			var rot = rotate_towards(player.position)
-			velocity = move_and_slide(Vector2.UP.rotated(rot) * SPEED)
-		
 		State.WINDUP:
 			$debug_text.text = "WINDUP"
 			var rot = rotate_towards(player.position)
-			velocity = move_and_slide(Vector2.UP.rotated(rot) * SPEED/2)
+			velocity = move_and_slide(Vector2.UP.rotated(rot) * SPEED)
 		
 		State.CHARGE:  # player can see ghost, fast charge to player
 			$debug_text.text = "CHARGE"
@@ -62,29 +57,16 @@ func _process(delta):
 
 
 func _on_player_detector_area_entered(area):
-	print("area entered: ", area.name)
-	
-	match area.name:
-		
-		"detection_range":
-			state = State.FREEZE
-		
-		"vision_range":
-			state = State.WINDUP
-			charge_timer.start(CHARGE_DELAY)
+	if not player.blind:
+#		print(area.name, " entered")
+		state = State.WINDUP
+		charge_timer.start(CHARGE_DELAY)
 
 
 func _on_player_detector_area_exited(area):
-	print("area exited: ", area.name)
-
-	match area.name:
-		
-		"detection_range":
-			state = State.FOLLOW
-		
-		"vision_range":
-			state = State.FREEZE
-			charge_timer.stop()
+#	print(area.name, " exited")
+	state = State.FREEZE
+	charge_timer.stop()
 
 
 func _on_charge_timer_timeout():
