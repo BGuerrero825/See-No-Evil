@@ -101,6 +101,7 @@ func _on_hit_box_area_entered(area):
 		game_over_timer.start(game_over_delay)
 	if area.name == "key":
 		print("key picked up")
+		$Sounds.play("key_pickup")
 		area.get_parent().free()
 		player_has_key = true
 		
