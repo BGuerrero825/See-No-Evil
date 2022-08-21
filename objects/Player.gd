@@ -67,5 +67,4 @@ func _process(delta):
 	
 	# move
 	velocity = move_and_slide(velocity, Vector2.UP)
-	print(blind_timer)
 	
