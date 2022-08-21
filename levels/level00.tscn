@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.5, 14.5 )
 
-[node name="level" type="Node2D"]
+[node name="level2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
