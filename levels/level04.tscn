@@ -20,9 +20,6 @@ position = Vector2( -42, 5 )
 [node name="Key" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 5 )
 
-[node name="Light" parent="." instance=ExtResource( 3 )]
-position = Vector2( 29, -20 )
-
 [node name="NpcOrchestrator" parent="." instance=ExtResource( 4 )]
 
 [node name="Position2D" type="Position2D" parent="NpcOrchestrator/Ghosts" index="0"]
@@ -34,6 +31,9 @@ position = Vector2( -21, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NpcOrchestrator/Safe_Zones/Area2D"]
 position = Vector2( 21.5, -4.5 )
 shape = SubResource( 1 )
+
+[node name="Light" parent="." instance=ExtResource( 3 )]
+position = Vector2( 29, -20 )
 
 [node name="Stage" parent="." instance=ExtResource( 5 )]
 

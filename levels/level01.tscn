@@ -28,6 +28,9 @@ target_level_path = "res://levels/level02.tscn"
 [node name="Key" parent="." instance=ExtResource( 2 )]
 position = Vector2( 197, 6 )
 
+[node name="Light2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 29, -20 )
+
 [node name="NpcOrchestrator" parent="." instance=ExtResource( 4 )]
 
 [node name="Area2D" type="Area2D" parent="NpcOrchestrator/Safe_Zones" index="0"]
