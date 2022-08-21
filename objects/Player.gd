@@ -12,7 +12,7 @@ var air_count = 0
 var input_dir := Vector2(0,0)
 var velocity := Vector2(0,0)
 var blind := false
-var blind_timer = 0
+var blind_timer = 160  # open eyes at the beginning of the level
 
 var player_is_dead := false
 var player_has_key := false
