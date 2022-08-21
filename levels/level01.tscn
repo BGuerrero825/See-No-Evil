@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Key.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://objects/NpcOrchestrator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/Stage.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/Spikes.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.5, 14.5 )
@@ -39,6 +40,12 @@ tile_data = PoolIntArray( -458743, 0, 1, -458742, 0, 1, -458741, 0, 1, -458740, 
 
 [node name="Light" parent="Stage/TileMap" index="1" instance=ExtResource( 3 )]
 position = Vector2( 29, -20 )
+
+[node name="Spikes" parent="." instance=ExtResource( 7 )]
+position = Vector2( 102, 30 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 114, 30 )
 
 [editable path="NpcOrchestrator"]
 [editable path="Stage"]
