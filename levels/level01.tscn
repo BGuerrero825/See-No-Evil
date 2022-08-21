@@ -28,6 +28,9 @@ target_level_path = "res://levels/level02.tscn"
 [node name="Key" parent="." instance=ExtResource( 2 )]
 position = Vector2( 197, 6 )
 
+[node name="Light2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 29, -20 )
+
 [node name="NpcOrchestrator" parent="." instance=ExtResource( 4 )]
 
 [node name="Area2D" type="Area2D" parent="NpcOrchestrator/Safe_Zones" index="0"]
@@ -41,9 +44,6 @@ shape = SubResource( 1 )
 
 [node name="TileMap" parent="Stage" index="1"]
 tile_data = PoolIntArray( -458743, 0, 1, -458742, 0, 1, -458741, 0, 1, -458740, 0, 1, -458739, 0, 1, -458738, 0, 1, -393207, 0, 1, -393202, 0, 1, -327677, 0, 1, -327676, 0, 1, -327675, 0, 1, -327674, 0, 1, -327673, 0, 1, -327672, 0, 1, -327671, 0, 1, -327666, 0, 1, -327665, 0, 1, -327664, 0, 1, -327663, 0, 1, -262141, 0, 1, -262127, 0, 1, -131078, 0, 1, -131077, 0, 1, -131076, 0, 1, -131075, 0, 1, -131074, 0, 1, -131073, 0, 1, -196608, 0, 1, -196607, 0, 1, -196606, 0, 1, -196605, 0, 1, -196591, 0, 1, -65542, 0, 1, -131069, 0, 1, -131055, 0, 1, -6, 0, 1, -65519, 0, 1, 65530, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 17, 0, 1, 131066, 0, 1, 131067, 0, 1, 131068, 0, 1, 131069, 0, 1, 131070, 0, 1, 131071, 0, 1, 65536, 0, 1, 65537, 0, 1, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 65541, 0, 1, 65542, 0, 1, 65543, 0, 1, 65546, 0, 1, 65549, 0, 1, 65550, 0, 1, 65551, 0, 1, 65552, 0, 1, 65553, 0, 1, 131079, 0, 1, 131082, 0, 1, 131279, 0, 1, 196615, 0, 1, 196616, 0, 1, 196617, 0, 1, 196618, 0, 1 )
-
-[node name="Light" parent="Stage/TileMap" index="1" instance=ExtResource( 3 )]
-position = Vector2( 29, -20 )
 
 [node name="Spikes" parent="." instance=ExtResource( 7 )]
 position = Vector2( 102, 30 )

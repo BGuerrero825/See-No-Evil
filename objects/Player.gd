@@ -1,6 +1,6 @@
 extends KinematicBody2D
 # dist / sec
-const SPEED = 60
+export var SPEED = 60
 # speed / sec
 const ACCEL = 600
 const FRICTION = 400

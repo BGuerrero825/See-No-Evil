@@ -20,6 +20,9 @@ position = Vector2( -42, 5 )
 [node name="Key" parent="." instance=ExtResource( 2 )]
 position = Vector2( 76, 5 )
 
+[node name="Light" parent="." instance=ExtResource( 3 )]
+position = Vector2( 29, -20 )
+
 [node name="NpcOrchestrator" parent="." instance=ExtResource( 4 )]
 
 [node name="Position2D" type="Position2D" parent="NpcOrchestrator/Ghosts" index="0"]
@@ -36,9 +39,6 @@ shape = SubResource( 1 )
 
 [node name="TileMap" parent="Stage" index="1"]
 tile_data = PoolIntArray( -327677, 0, 1, -327676, 0, 1, -327675, 0, 1, -327674, 0, 1, -327673, 0, 1, -327672, 0, 1, -327671, 0, 1, -262141, 0, 1, -262135, 0, 1, -131078, 0, 1, -131077, 0, 1, -131076, 0, 1, -131075, 0, 1, -131074, 0, 1, -131073, 0, 1, -196608, 0, 1, -196607, 0, 1, -196606, 0, 1, -196605, 0, 1, -196599, 0, 1, -65542, 0, 1, -131069, 0, 1, -131063, 0, 1, -6, 0, 1, -65527, 0, 1, 65530, 0, 1, 9, 0, 1, 131066, 0, 1, 131067, 0, 1, 131068, 0, 1, 131069, 0, 1, 131070, 0, 1, 131071, 0, 1, 65536, 0, 1, 65537, 0, 1, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 65541, 0, 1, 65542, 0, 1, 65543, 0, 1, 65544, 0, 1, 65545, 0, 1, 131279, 0, 1 )
-
-[node name="Light" parent="Stage/TileMap" index="1" instance=ExtResource( 3 )]
-position = Vector2( 29, -20 )
 
 [editable path="NpcOrchestrator"]
 [editable path="Stage"]

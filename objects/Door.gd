@@ -6,7 +6,7 @@ export var target_level_path := "res://levels/level00.tscn"
 onready var player : KinematicBody2D = $"/root/Global".player
 
 onready var level_transition_timer := Timer.new()
-var level_transition_delay : float = 0.2
+var level_transition_delay : float = 0.35
 
 func _ready():
 	level_transition_timer.connect("timeout", self, "_on_level_transition_timer_timeout")
@@ -17,6 +17,7 @@ func _on_Area2D_area_entered(area):
 		$Sounds.play("door_unlock")
 		print("REACHED DOOR WITH KEY")
 		player.player_has_key = false
+		player.SPEED = 0
 		
 		level_transition_timer.start(level_transition_delay)
 	elif area.name == "hit_box" and not player.player_has_key:
