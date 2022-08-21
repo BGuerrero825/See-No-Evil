@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/map.png" type="Texture" id=1]
 [ext_resource path="res://objects/Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/circle_light.png" type="Texture" id=3]
 [ext_resource path="res://assets/pixel.png" type="Texture" id=4]
+[ext_resource path="res://assets/key.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3, 3 )
@@ -166,5 +167,22 @@ align = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
 shape = SubResource( 12 )
+
+[node name="hud" type="Control" parent="."]
+modulate = Color( 0.596078, 0.545098, 0, 1 )
+margin_left = -5.0
+margin_top = 38.0
+margin_right = 6.0
+margin_bottom = 49.0
+
+[node name="Light2D" type="Light2D" parent="hud"]
+position = Vector2( 5.49332, 5.49335 )
+scale = Vector2( 0.239663, 0.239663 )
+texture = ExtResource( 3 )
+energy = 0.5
+
+[node name="key_inv" type="Sprite" parent="hud"]
+position = Vector2( 5.49333, 5.49333 )
+texture = ExtResource( 5 )
 
 [connection signal="area_entered" from="hit_box" to="." method="_on_hit_box_area_entered"]

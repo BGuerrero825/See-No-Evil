@@ -33,6 +33,9 @@ func _ready():
 func _process(delta):
 	
 	if not player_is_dead:
+		# key_inv status
+		$hud.visible = player_has_key
+		
 		# process user x-axis velocity input based on move keys
 		input_dir = Vector2.ZERO
 		input_dir.x = Input.get_action_strength("right") - Input.get_action_strength("left")
