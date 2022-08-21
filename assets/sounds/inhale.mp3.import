@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/inhale.mp3-40875ed8c89153623fd50b04d997e6e2.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/inhale.mp3"
+dest_files=[ "res://.import/inhale.mp3-40875ed8c89153623fd50b04d997e6e2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -59,6 +59,7 @@ func _process(delta):
 func _on_player_detector_area_entered(area):
 	if not player.blind:
 		print(area.name, " entered player_detector")
+		$Sounds.play("inhale")
 		state = State.WINDUP
 		charge_timer.start(CHARGE_DELAY)
 
@@ -70,4 +71,5 @@ func _on_player_detector_area_exited(area):
 
 
 func _on_charge_timer_timeout():
+	$Sounds.play("ghost_gasp")
 	state = State.CHARGE

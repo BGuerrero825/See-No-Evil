@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/ghost.png" type="Texture" id=1]
 [ext_resource path="res://objects/Ghost.gd" type="Script" id=2]
+[ext_resource path="res://assets/sounds/ghost_gasp.mp3" type="AudioStream" id=3]
+[ext_resource path="res://objects/Sound_Player.gd" type="Script" id=4]
+[ext_resource path="res://assets/sounds/inhale.mp3" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.0
@@ -46,6 +49,18 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box"]
 shape = SubResource( 3 )
+
+[node name="Sounds" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="ghost_gasp" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 3 )
+volume_db = -15.0
+pitch_scale = 1.2
+
+[node name="inhale" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 5 )
+volume_db = -10.0
 
 [connection signal="area_entered" from="player_detector" to="." method="_on_player_detector_area_entered"]
 [connection signal="area_exited" from="player_detector" to="." method="_on_player_detector_area_exited"]

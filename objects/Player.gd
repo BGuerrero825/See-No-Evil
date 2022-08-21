@@ -27,6 +27,7 @@ func _ready():
 	$"/root/Global".register_player(self)
 	game_over_timer.connect("timeout", self, "_on_game_over_timer_timeout")
 	add_child(game_over_timer)
+	$Sounds.play("spooky_ambiance")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,9 +47,14 @@ func _process(delta):
 		if input_dir.x == 0:
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 			$AnimationPlayer.play("idle")
+			$Sounds.stop("walk_cycle")
 		else:
 			velocity.x = move_toward(velocity.x, SPEED * input_dir.x, ACCEL * delta)
 			$AnimationPlayer.play("run")
+			if(is_on_floor()):
+				$Sounds.play("walk_cycle")
+			else:
+				$Sounds.stop("walk_cycle")
 		
 		# gravity
 		velocity.y = move_toward(velocity.y, GRAVITY*10, GRAVITY * delta)
@@ -84,6 +90,7 @@ func _process(delta):
 func _on_hit_box_area_entered(area):
 #	print(area.name, " entered hitbox")
 	if area.name == "hurt_box":
+		$Sounds.play("player_hit")
 		print("player died")
 		player_is_dead = true
 		$Blind.material.set_shader_param("blind", 1)

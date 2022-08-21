@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ghost_gasp.mp3-491999d9d5f366d057e4a0312d41b098.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/ghost_gasp.mp3"
+dest_files=[ "res://.import/ghost_gasp.mp3-491999d9d5f366d057e4a0312d41b098.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
