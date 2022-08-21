@@ -26,6 +26,7 @@ script = ExtResource( 3 )
 
 [node name="door_locked" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 4 )
+volume_db = -10.0
 
 [node name="door_unlock" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 5 )

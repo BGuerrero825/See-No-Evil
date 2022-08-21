@@ -25,7 +25,10 @@ onready var charge_timer := Timer.new()
 func _ready():
 	charge_timer.connect("timeout", self, "_on_charge_timer_timeout")
 	add_child(charge_timer)
-	$AnimationPlayer.play("idle_charge")
+	if "Ghost_Charger" in self.name:
+		$AnimationPlayer.play("idle_charge")
+	else:
+		$AnimationPlayer.play("idle")
 
 
 func rotate_towards(target_pos, target_rotation_speed = ROTATION_SPEED) -> float:

@@ -30,5 +30,8 @@ texture = ExtResource( 2 )
 hframes = 2
 frame = 1
 
+[node name="inhale" parent="Sounds" index="1"]
+volume_db = -18.0
+
 [node name="AnimationPlayer" parent="." index="7"]
 anims/idle_charge = SubResource( 1 )
