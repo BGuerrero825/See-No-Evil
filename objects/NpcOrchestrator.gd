@@ -24,7 +24,15 @@ func _ready():
 #	print("charger_positions: ", charger_positions)
 #	print("drop_bear_positions: ", drop_bear_positions)
 #	print("safe_zones: ", safe_zones)
-	spawn_all_ghosts()
+#	spawn_all_ghosts()
+	spawn_safe_zones()
+
+
+func spawn_safe_zones():
+	for zone in safe_zones:
+		if zone is Area2D:
+			zone.connect("area_entered", self, "_on_safe_zone_entered")
+			zone.connect("area_exited", self, "_on_safe_zone_exited")
 
 
 func spawn_all_ghosts():
@@ -39,7 +47,9 @@ func spawn_all_ghosts():
 
 
 func delete_all_ghosts():
-	pass
+	for g in all_ghosts:
+		g.free()
+	all_ghosts = []
 
 
 func spawn_ghost(ghost_type, location):
@@ -52,3 +62,14 @@ func spawn_ghost(ghost_type, location):
 	print("\t at location: ", new_ghost.position)
 	
 	all_ghosts.append(new_ghost)
+
+
+func _on_safe_zone_entered(area):
+	print("entered: ", area)
+	if area.name == "hit_box":  # player
+		delete_all_ghosts()
+
+func _on_safe_zone_exited(area):
+	print("exited: ", area)
+	if area.name == "hit_box":
+		spawn_all_ghosts()

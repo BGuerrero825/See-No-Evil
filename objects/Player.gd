@@ -16,7 +16,8 @@ var blind_timer = 0
 
 var player_is_dead := false
 
-onready var vision_extents : Vector2 = $vision_range/expand_contract.shape.extents
+#onready var vision_extents : Vector2 = $vision_range/expand_contract.shape.extents
+var vision_extents := Vector2(75,48)
 onready var game_over_timer := Timer.new()
 var game_over_delay : float = 2.0
 
@@ -77,7 +78,7 @@ func _process(delta):
 
 
 func _on_hit_box_area_entered(area):
-	print(area.name, " entered hitbox")
+#	print(area.name, " entered hitbox")
 	if area.name == "hurt_box":
 		print("player died")
 		player_is_dead = true
